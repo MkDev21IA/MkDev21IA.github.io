@@ -4142,3 +4142,229 @@ input, select, textarea {
 		}
 
 	}
+
+/* -------------------------------------------------------------
+   Custom Enhancements for Mikhael Silveira Portfolio
+------------------------------------------------------------- */
+html {
+	scroll-behavior: smooth;
+}
+
+.banner-avatar-wrap {
+	display: inline-block;
+	margin-bottom: 1.2em;
+	position: relative;
+}
+
+.banner-avatar {
+	width: 130px;
+	height: 130px;
+	border-radius: 50%;
+	border: 3px solid rgba(255, 255, 255, 0.4);
+	object-fit: cover;
+	box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	display: block;
+}
+
+.banner-avatar:hover {
+	transform: scale(1.06);
+	box-shadow: 0 0 35px rgba(56, 189, 248, 0.85);
+}
+
+.role-badge {
+	display: inline-block;
+	padding: 0.3em 0.9em;
+	background: rgba(56, 189, 248, 0.12);
+	border: 1px solid rgba(56, 189, 248, 0.35);
+	border-radius: 20px;
+	font-size: 0.8em;
+	font-weight: 600;
+	color: #7dd3fc;
+	margin-bottom: 1.2em;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+
+.tech-tags {
+	margin: 1em 0 0.5em 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4em;
+}
+
+.tech-tag {
+	display: inline-block;
+	padding: 0.25em 0.75em;
+	background: rgba(255, 255, 255, 0.06);
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	border-radius: 4px;
+	font-size: 0.75em;
+	font-weight: 600;
+	font-family: monospace;
+	color: #cbd5e1;
+	letter-spacing: 0.03em;
+	transition: all 0.2s ease;
+}
+
+.tech-tag:hover {
+	background: rgba(56, 189, 248, 0.2);
+	border-color: #38bdf8;
+	color: #fff;
+}
+
+.tech-tag.highlight {
+	background: rgba(52, 211, 153, 0.12);
+	border-color: rgba(52, 211, 153, 0.35);
+	color: #6ee7b7;
+}
+
+.tech-tag.accent {
+	background: rgba(168, 85, 247, 0.15);
+	border-color: rgba(168, 85, 247, 0.35);
+	color: #d8b4fe;
+}
+
+.skills-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 1.5em;
+	margin-top: 2em;
+}
+
+.skill-card {
+	background: rgba(30, 41, 59, 0.5);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 8px;
+	padding: 1.8em;
+	transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.skill-card:hover {
+	transform: translateY(-5px);
+	border-color: rgba(56, 189, 248, 0.5);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.skill-card h3 {
+	font-size: 1.15em;
+	margin-bottom: 1em;
+	display: flex;
+	align-items: center;
+	gap: 0.6em;
+	color: #f8fafc;
+}
+
+.skill-card h3 i {
+	color: #38bdf8;
+	font-size: 1.2em;
+}
+
+.exp-bullets {
+	list-style: none;
+	padding-left: 0;
+	margin: 1.2em 0;
+}
+
+.exp-bullets li {
+	position: relative;
+	padding-left: 1.4em;
+	margin-bottom: 0.7em;
+	line-height: 1.6;
+	color: #cbd5e1;
+}
+
+.exp-bullets li:before {
+	content: "▹";
+	position: absolute;
+	left: 0;
+	color: #38bdf8;
+	font-size: 1.1em;
+}
+
+.project-card-link {
+	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5em;
+	margin-top: 1em;
+	font-weight: bold;
+	color: #38bdf8;
+	transition: gap 0.2s ease;
+}
+
+.project-card-link:hover {
+	gap: 0.8em;
+	color: #7dd3fc;
+}
+
+.hero-socials {
+	display: flex;
+	gap: 1.2em;
+	justify-content: center;
+	margin: 1.5em 0 2em 0;
+	list-style: none;
+	padding: 0;
+}
+
+.hero-socials li a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.6em;
+	height: 2.6em;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.08);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	color: #f8fafc;
+	font-size: 1.1em;
+	transition: all 0.2s ease;
+}
+
+.hero-socials li a:hover {
+	background: rgba(56, 189, 248, 0.25);
+	border-color: #38bdf8;
+	color: #38bdf8;
+	transform: translateY(-3px);
+}
+
+.badge-status {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35em;
+	padding: 0.25em 0.7em;
+	border-radius: 4px;
+	font-size: 0.72em;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	margin-bottom: 0.8em;
+}
+
+.badge-status.private {
+	background: rgba(244, 63, 94, 0.15);
+	border: 1px solid rgba(244, 63, 94, 0.4);
+	color: #fda4af;
+}
+
+.badge-status.public {
+	background: rgba(34, 197, 94, 0.15);
+	border: 1px solid rgba(34, 197, 94, 0.4);
+	color: #86efac;
+}
+
+.badge-status.institutional {
+	background: rgba(168, 85, 247, 0.15);
+	border: 1px solid rgba(168, 85, 247, 0.4);
+	color: #d8b4fe;
+}
+
+.project-note-private {
+	font-size: 0.85em;
+	color: #94a3b8;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.45em;
+	margin-top: 1em;
+	font-style: italic;
+}

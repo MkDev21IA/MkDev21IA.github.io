@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad-p4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111d28"/>
+      <stop offset="100%" stop-color="#080e14"/>
+    </linearGradient>
+    <linearGradient id="pipe-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="50%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="350" fill="url(#grad-p4)"/>
+
+  <!-- Pipeline stages -->
+  <g transform="translate(50, 80)">
+    <!-- Stage 1: Ingestion -->
+    <rect x="0" y="0" width="105" height="100" rx="8" fill="#162332" stroke="#06b6d4" stroke-width="2"/>
+    <text x="52" y="30" font-family="sans-serif" font-size="10" font-weight="bold" fill="#67e8f9" text-anchor="middle">ELT INGEST</text>
+    <text x="52" y="55" font-family="monospace" font-size="11" fill="#94a3b8" text-anchor="middle">dlt • SQL</text>
+    <text x="52" y="75" font-family="monospace" font-size="10" fill="#06b6d4" text-anchor="middle">Pipedrive</text>
+
+    <!-- Arrow 1 -->
+    <path d="M105 50 H135 M130 45 L135 50 L130 55" stroke="#38bdf8" stroke-width="2" fill="none"/>
+
+    <!-- Stage 2: AWS Transformation -->
+    <rect x="135" y="0" width="105" height="100" rx="8" fill="#162332" stroke="#3b82f6" stroke-width="2"/>
+    <text x="187" y="30" font-family="sans-serif" font-size="10" font-weight="bold" fill="#93c5fd" text-anchor="middle">TRANSFORM</text>
+    <text x="187" y="55" font-family="monospace" font-size="11" fill="#94a3b8" text-anchor="middle">dbt • Athena</text>
+    <text x="187" y="75" font-family="monospace" font-size="10" fill="#60a5fa" text-anchor="middle">S3 / Glue</text>
+
+    <!-- Arrow 2 -->
+    <path d="M240 50 H270 M265 45 L270 50 L265 55" stroke="#60a5fa" stroke-width="2" fill="none"/>
+
+    <!-- Stage 3: LLM & Bedrock -->
+    <rect x="270" y="0" width="105" height="100" rx="8" fill="#1e1b4b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="322" y="30" font-family="sans-serif" font-size="10" font-weight="bold" fill="#c084fc" text-anchor="middle">BEDROCK RAG</text>
+    <text x="322" y="55" font-family="monospace" font-size="11" fill="#94a3b8" text-anchor="middle">Context Eval</text>
+    <text x="322" y="75" font-family="monospace" font-size="10" fill="#c084fc" text-anchor="middle">Claude / LLM</text>
+
+    <!-- Arrow 3 -->
+    <path d="M375 50 H405 M400 45 L405 50 L400 55" stroke="#8b5cf6" stroke-width="2" fill="none"/>
+
+    <!-- Stage 4: Evaluation & Feedback Loop -->
+    <rect x="405" y="0" width="105" height="100" rx="8" fill="#261530" stroke="#ec4899" stroke-width="2"/>
+    <text x="457" y="30" font-family="sans-serif" font-size="10" font-weight="bold" fill="#f472b6" text-anchor="middle">FEEDBACK</text>
+    <text x="457" y="55" font-family="monospace" font-size="11" fill="#94a3b8" text-anchor="middle">Auto Prompt</text>
+    <text x="457" y="75" font-family="monospace" font-size="10" fill="#f472b6" text-anchor="middle">Failure Loop</text>
+  </g>
+
+  <!-- Curved Feedback Loop line from Stage 4 back to Stage 3 -->
+  <path d="M510 200 C510 240, 375 240, 375 200" fill="none" stroke="#ec4899" stroke-width="2" stroke-dasharray="4,4"/>
+  <polygon points="375,195 370,205 380,205" fill="#ec4899"/>
+  <text x="445" y="255" font-family="monospace" font-size="11" fill="#f472b6" text-anchor="middle">Automated Feedback Optimization</text>
+
+  <!-- Orchestration Bar -->
+  <g transform="translate(50, 275)">
+    <rect width="510" height="40" rx="6" fill="#0f172a" stroke="#475569" stroke-width="1.5"/>
+    <text x="255" y="25" font-family="sans-serif" font-size="11" fill="#cbd5e1" text-anchor="middle">Orchestrated via <tspan fill="#fbbf24" font-weight="bold">AWS Step Functions</tspan> &amp; <tspan fill="#60a5fa" font-weight="bold">GitHub Actions CI/CD</tspan></text>
+  </g>
+</svg>

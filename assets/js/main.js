@@ -110,6 +110,13 @@
 				.on('click', 'a', function(event) {
 
 					var href = $(this).attr('href');
+					var target = $(this).attr('target');
+
+					if (target === '_blank') {
+						event.stopPropagation();
+						$menu._hide();
+						return;
+					}
 
 					event.preventDefault();
 					event.stopPropagation();
@@ -117,9 +124,18 @@
 					// Hide.
 						$menu._hide();
 
-					// Redirect.
+					// Redirect or Scroll.
 						window.setTimeout(function() {
-							window.location.href = href;
+							if (href && href.charAt(0) === '#') {
+								var $target = $(href);
+								if ($target.length > 0) {
+									$('html, body').animate({
+										scrollTop: $target.offset().top
+									}, 400);
+								}
+							} else {
+								window.location.href = href;
+							}
 						}, 350);
 
 				});
